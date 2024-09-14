@@ -1,0 +1,224 @@
+/* Dark Mode Theme */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.container {
+    max-width: 2000px;
+    width: 100%;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #f8f9fa;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#sidebar {
+    width: 150px; /* Adjust width as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #1e1e1e;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+#content {
+    margin-left: 150px; /* Space for sidebar */
+    padding: 20px;
+    flex: 1;
+}
+
+#searchSection, #uploadSection, #imageContainerSection {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Ensure sections are positioned within the content area */
+#searchSection, #uploadSection, #imageContainerSection {
+    width: calc(100% - 40px); /* Adjust for padding */
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.search-box, .upload-box {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+input[type="text"], input[type="file"] {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+}
+
+input[type="file"] {
+    background-color: #444;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#imageContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+img {
+    max-width: 1000px;
+    max-height: 150px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 125%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+/* Tag, Branche, Name styles */
+.tag, .branche, .name {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.tag {
+    background-color: #3a3a3a;
+    color: #9e9e9e;
+}
+
+.branche {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.name {
+    background-color: #b30059;
+    color: #fff;
+}
+
+/* Sidebar styling */
+.sidebar-list {
+    margin-bottom: 20px;
+}
+
+.sidebar-list div {
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.sidebar-list div:hover {
+    background-color: #007bff;
+}
+
+/* Suggestion box styling */
+.suggestion-box {
+    background-color: #333;
+    border: 1px solid #555;
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    z-index: 100;
+    width: 300px;
+    display: none; /* Hidden by default */
+}
+
+.suggestion-box.visible {
+    display: block; /* Show only when suggestions are available */
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.suggestion-item:hover {
+    background-color: #007bff;
+}
+
+/* Message box styling */
+.message {
+    color: #28a745;
+    margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-box, .upload-box {
+        flex-direction: column;
+    }
+}

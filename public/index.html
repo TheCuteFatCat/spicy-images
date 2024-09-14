@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicy Images</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Image Tagging & Search</h1>
+        </header>
+
+        <main>
+            <aside id="sidebar">
+                <section id="tagsSidebar">
+                    <h2>Tags</h2>
+                    <div id="branchesList" class="sidebar-list"></div>
+                    <div id="namesList" class="sidebar-list"></div>
+                    <div id="tagsList" class="sidebar-list"></div>
+                </section>
+            </aside>
+
+            <section id="content">
+                <section id="searchSection">
+                    <h2>Search Images</h2>
+                    <div class="search-box">
+                        <input type="text" id="tagInput" placeholder="Tags (e.g. nature, city)">
+                        <input type="text" id="brancheInput" placeholder="Branche (Category)">
+                        <input type="text" id="nameInput" placeholder="Name (Identifier)">
+                        <button onclick="searchImages()" class="button">Search</button>
+                    </div>
+                    <div id="suggestionBox" class="suggestion-box"></div>
+                    <div id="brancheSuggestionBox" class="suggestion-box"></div>
+                    <div id="nameSuggestionBox" class="suggestion-box"></div>
+                </section>
+
+                <section id="imageContainerSection">
+                    <h2>Image Gallery</h2>
+                    <div id="imageContainer" class="image-gallery"></div>
+                </section>
+
+                <footer>
+                    <section id="uploadSection">
+                        <h2>Upload Image</h2>
+                        <form id="uploadForm" enctype="multipart/form-data" class="upload-box">
+                            <input type="file" id="imageFile" name="image" accept="image/*" required>
+                            <input type="text" id="uploadTags" placeholder="Tags (e.g. nature, city)" required>
+                            <input type="text" id="uploadBranche" placeholder="Branche (Category)" required>
+                            <input type="text" id="uploadNameTag" placeholder="Name (Identifier)" required>
+                            <button type="submit" class="button">Upload</button>
+                        </form>
+                        <div id="uploadMessage" class="message"></div>
+                    </section>
+                </footer>
+            </section>
+        </main>
+
+        <!-- Modal for Image Display -->
+        <div id="imageModal" class="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
